@@ -11,4 +11,19 @@ class Todo {
     }
 }
 
-module.exports = {}
+/* テストデータの作成 */
+for (let i = 0; i < 5; i++) {
+    const index = i + 1
+    const todo = new Todo({
+        title: "タイトル" + index,
+        body: "ボディ" + index
+    })
+
+    todos.push(todo)
+}
+
+module.exports = {
+    findAll: () => {
+        return todos.slice()
+    }
+}
